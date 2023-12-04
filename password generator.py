@@ -1,6 +1,7 @@
 import tkinter as tk
 import random
 import string
+import pyperclip  # Import pyperclip for copying to clipboard
 
 # Function to generate an easy password (digits only)
 def generate_easy_password():
@@ -27,17 +28,27 @@ def display_generated_password(password, complexity):
     password_display.insert(tk.END, f"Here's a generated '{complexity}' password for you.: \n{password}")
     password_display.config(state=tk.DISABLED)
 
+    # Enable the copy button
+    copy_button.config(state=tk.NORMAL)
+    # Store the generated password in a global variable
+    global generated_password
+    generated_password = password
+
+# Function to copy the generated password to the clipboard
+def copy_password():
+    pyperclip.copy(generated_password)
+
 # Creating the main window
 root = tk.Tk()
 root.iconbitmap("password generator.ico")
 root.title("Password Generator")
 root.config(bg="black")  # Set background color to black
 
-# Setting the default font for the entire application to Arial
+# Set the default font for the entire application to Arial
 root.option_add("*Font", "Arial")
 
 # Creating a label for the slider
-length_label = tk.Label(root, text="Select Password Length:", bg="black", fg="white", font=("Arial", 12, "bold"))
+length_label = tk.Label(root, text="Select Password Length:", bg="black", fg="white", font=("Arial", 12))
 length_label.pack()
 
 # Creating a scale/slider for selecting password length
@@ -58,6 +69,10 @@ hard_button.pack(pady=5)
 password_display = tk.Text(root, height=10, width=40, font=("Arial", 12), bg="black", fg="white")
 password_display.config(state=tk.DISABLED)
 password_display.pack()
+
+# Creating button to copy the generated password
+copy_button = tk.Button(root, text="Copy Password", command=copy_password, font=("Arial", 12), state=tk.DISABLED)
+copy_button.pack(pady=5)
 
 # Starting the main loop
 root.mainloop()
