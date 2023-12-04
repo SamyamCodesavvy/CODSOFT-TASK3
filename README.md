@@ -26,7 +26,5 @@ The application is implemented in Python using the Tkinter library for the GUI. 
 
 This simple Password Generator application offers users the flexibility to generate passwords of varying complexities quickly. Users can customize the length and complexity of the passwords according to their requirements.
 
-Feel free to contribute, suggest improvements, or use this project as a reference for your password generation needs!
-
 ### How to Run the Application
 To run the application, simply execute the provided Python script. Make sure you have Tkinter, Pyperclip, and their dependencies installed.
