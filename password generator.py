@@ -37,7 +37,7 @@ root.config(bg="black")  # Set background color to black
 root.option_add("*Font", "Arial")
 
 # Creating a label for the slider
-length_label = tk.Label(root, text="Select Password Length:", bg="black", fg="white", font=("Arial", 12))
+length_label = tk.Label(root, text="Select Password Length:", bg="black", fg="white", font=("Arial", 12, "bold"))
 length_label.pack()
 
 # Creating a scale/slider for selecting password length
