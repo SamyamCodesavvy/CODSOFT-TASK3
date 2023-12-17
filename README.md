@@ -3,7 +3,7 @@
 
 This is a simple Password Generator application implemented in Python using the Tkinter library. The application generates random passwords based on the user's selected complexity level and allows the user to copy the generated password to the clipboard.
 bj
-## Features and Functionality
+Features and Functionality
 
 - Three complexity levels: Easy, Medium, and Hard
 - Easy: Generates passwords with digits only
